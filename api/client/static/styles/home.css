@@ -1,0 +1,184 @@
+@keyframes blurAnimation {
+    from {
+        backdrop-filter: blur(0px);
+    }
+    to {
+        backdrop-filter: blur(10px);
+    }
+}
+
+* {
+    margin: 0;
+    text-shadow: 3px 3px 5px #282828;
+    padding: 0;
+}
+
+.hidden-text {
+    opacity: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: auto;
+    background-image: url('https://images.pexels.com/photos/2955064/pexels-photo-2955064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Poppins';
+    position: relative;
+
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    backdrop-filter: blur(10px); 
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1; 
+    animation: blurAnimation 5s ease-in forwards;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.container-frameworks-languages, .container-achivements {
+    z-index: 2;
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+    text-shadow: 3px 3px 5px #282828;
+}
+
+.frameworks-languages-icons, .achivements-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.frameworks-languages-icons svg {
+    vertical-align: middle;
+    margin: 15px;
+    box-shadow: 0px 0px 125px #2b2b2b;
+    transition: all 388ms ease-in-out;
+    cursor: pointer;
+}
+
+.achivements-icons svg {
+    vertical-align: middle;
+    margin: 15px;
+    box-shadow: 0px 0px 125px #2b2b2b;
+    transition: all 388ms ease-in-out;
+    cursor: pointer;
+}
+
+.frameworks-languages-icons svg:hover {
+    scale: 1.1;
+}
+
+.achivements-icons svg:hover {
+    scale: 1.1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+    margin: 25px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+#pic {
+    height: 210px;
+    width: 320px;
+    box-shadow: 0px 0px 125px #2b2b2b;
+    image-rendering: optimizeQuality;
+    z-index: 2;
+    border-radius: 15px;
+    transition: all 388ms ease-in-out !important;
+    margin: 15px;
+}
+
+#pic:hover {
+    filter: blur(3px);
+    box-shadow: 0px 0px 325px #2b2b2b;
+    scale: 1.1;
+}
+
+.default-btn {
+    padding: 12px;
+    margin: 15px;
+    border: 1px solid white;
+    border-radius: 7px;
+    background: none;
+    backdrop-filter: blur(10px);
+    color: white;
+    cursor: pointer;
+    transition: all 388ms ease-in-out !important;
+}
+
+.default-btn:hover {
+    border-radius: 0px;
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-bottom: 1px solid white;
+    backdrop-filter: blur(0px);
+}
+
+.default-btn-twitter {
+    padding: 12px;
+    margin: 15px;
+    border: 1px solid #5271FF;
+    border-radius: 7px;
+    background-color: #5271FF;
+    backdrop-filter: blur(10px);
+    color: white;
+    cursor: pointer;
+    transition: all 388ms ease-in-out !important;
+}
+
+.default-btn-twitter:hover {
+    border-radius: 0px;
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-bottom: 1px solid #5271FF;
+    background: none;
+    backdrop-filter: blur(0px);
+}
+
+
+@media screen and (max-width: 600px) {
+    .container {
+        margin-top: 100px;
+        margin-bottom: 15px;
+        flex-direction: column;
+    }
+    #pic {
+        margin: 0px 25px;
+    }
+}
